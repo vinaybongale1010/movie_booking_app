@@ -11,7 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200301110240) do
+ActiveRecord::Schema.define(version: 20200301115026) do
+
+  create_table "bookings", force: true do |t|
+    t.integer  "show_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bookings", ["show_id"], name: "index_bookings_on_show_id"
+  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id"
+
+  create_table "movies", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shows", force: true do |t|
+    t.time     "show_time"
+    t.integer  "show_fee"
+    t.integer  "movie_id"
+    t.integer  "theatre_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shows", ["movie_id"], name: "index_shows_on_movie_id"
+  add_index "shows", ["theatre_id"], name: "index_shows_on_theatre_id"
+
+  create_table "theatres", force: true do |t|
+    t.string   "name"
+    t.integer  "seat_limit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
