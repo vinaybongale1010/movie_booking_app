@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   respond_to :html
 
   def index
-    @movies = Movie.all
+    @movies = Movie.joins(:theatres).joins(:shows).uniq.select("movies.id as id, movies.name as movie_name, theatres.name as theatre_name, shows.show_time as show_time")
     respond_with(@movies)
   end
 
