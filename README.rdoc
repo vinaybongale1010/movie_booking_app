@@ -1,28 +1,51 @@
-== README
+Movie Booking Website
+The goal is to create a simple ticketing platform which displays a bunch of
+movies. Users can register or login. They can visit a movie page, see what
+theatres is the movie screened and buy tickets for a movie.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Requirements
+1. Home Page
+a. Display all the movies, ordered by latest screened.
+b. Navigation:
+“Home”, “Login”, “Register” (when logged out)
+“Home”, “Bookings”, “Logout” (when logged in)
 
-Things you may want to cover:
+2. Movie Page
+a. Display list of all theatres the movie is screened along with the start time of the
+show.
+b. Each theatre has multiple shows running daily (seed them with random times, eg.
+9:00, 11:00, 14:30, 17:30)
+c. Each theatre has a seat limit (seed them with random limits, eg. 50, 75, 100)
+d. Each show has an associated ticket fee.
+e. Actions: “Book” / “Cancel” for each show. (Show them only when logged in)
+3. Bookings Page
+a. Display list of all bookings the logged-in user has made in descending order.
+b. The user must land on this page after logging in.
+4. Login Page
+a. Fields: Email, Password
+5. Register Page
+a. Fields: Email, Password, Confirm Password, Name, Gender
+6. Users should not be allowed to book or cancel a past show. (Hide or disable the buttons)
+7. Users should not be allowed to book beyond the seat limit. (Hide or disable the buttons)
+Bonus Requirements
+If you complete early, add these additional requirements to get bonus points:
+1. User gets a 5% discount on the ticket if gender is female.
+2. Coupon codes can be applied while purchasing tickets.
 
-* Ruby version
+Technology
 
-* System dependencies
+1. Ruby on Rails
+2. Gems are allowed.
+3. Twitter Bootstrap or any other UI toolkit is allowed, but not necessary.
 
-* Configuration
+Judging
+1. Database Schema - Needs to be flawless. It’s the basic architecture of your application.
+2. Code Style - Use indents, spaces wisely.
+3. Code Quality - Understanding of MVC & OOPS will be tested.
+4. Ruby & Rails Skills - Using neat tricks in the language or framework will earn points.
+5. Completion of Requirements
+6. Completion of Bonus Requirements
+No points for aesthetics. You don’t need images, etc. Twitter Bootstrap should be more than
+enough to keep the overall look and feel clean.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+GOOD LUCK!
