@@ -1,0 +1,2 @@
+<%= label_tag :Show %><br>
+<%= select_tag(:show_id, options_from_collection_for_select(@shows, 'id', 'show_time'), {:prompt => 'Select Show', :name => "booking[show_id]"}) %>

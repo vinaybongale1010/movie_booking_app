@@ -1,0 +1,2 @@
+<%= label_tag :Theatre %><br>
+<%= select_tag(:theatre, options_from_collection_for_select(@theatres, 'id', 'name'), {:prompt => 'Select Theatre'}) %>

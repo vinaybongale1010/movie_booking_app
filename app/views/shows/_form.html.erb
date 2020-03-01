@@ -13,19 +13,19 @@
 
   <div class="field">
     <%= f.label :show_time %><br>
-    <%= f.time_select :show_time %>
+    <%= f.datetime_select :show_time %>
   </div>
   <div class="field">
     <%= f.label :show_fee %><br>
     <%= f.number_field :show_fee %>
   </div>
   <div class="field">
-    <%= f.label :movie_id %><br>
-    <%= f.text_field :movie_id %>
+    <%= f.label :movie%><br>
+    <%= f.select(:movie_id, @movies.collect {|movie| [movie.name, movie.id]}, :prompt => 'Select Movie') %>
   </div>
   <div class="field">
     <%= f.label :theatre_id %><br>
-    <%= f.text_field :theatre_id %>
+    <%= f.select(:theatre_id, @theatres.collect {|theatre| [theatre.name, theatre.id]}, :prompt => 'Select Theatre') %>
   </div>
   <div class="actions">
     <%= f.submit %>

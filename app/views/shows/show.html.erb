@@ -12,12 +12,12 @@
 
 <p>
   <strong>Movie:</strong>
-  <%= @show.movie %>
+  <%= @show.movie.name %>
 </p>
 
 <p>
   <strong>Theatre:</strong>
-  <%= @show.theatre %>
+  <%= @show.theatre.name %>
 </p>
 
 <%= link_to 'Edit', edit_show_path(@show) %> |

@@ -28,6 +28,9 @@ gem 'spring',        group: :development
 
 #Devise Authentication
 gem 'devise'
+
+gem 'pry'
+gem 'rb-readline'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,5 +1,5 @@
 class ShowsController < ApplicationController
-  before_action :set_show, only: [:show, :edit, :update, :destroy]
+  before_action :set_show, only: [:show, :edit, :update, :destroy, :get_show]
 
   respond_to :html
 
@@ -14,10 +14,14 @@ class ShowsController < ApplicationController
 
   def new
     @show = Show.new
+    @movies = Movie.all
+    @theatres = Theatre.all
     respond_with(@show)
   end
 
   def edit
+    @movies = Movie.all
+    @theatres = Theatre.all
   end
 
   def create
@@ -34,6 +38,14 @@ class ShowsController < ApplicationController
   def destroy
     @show.destroy
     respond_with(@show)
+  end
+
+  def get_shows
+    @shows = Theatre.find(params[:theatre_id]).shows.where(movie_id: params[:movie_id])
+  end
+
+  def get_show
+    @show
   end
 
   private

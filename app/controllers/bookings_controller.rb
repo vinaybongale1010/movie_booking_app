@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   respond_to :html
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.order("created_at DESC")
     respond_with(@bookings)
   end
 
@@ -14,6 +14,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @movies = Movie.all
     respond_with(@booking)
   end
 
@@ -23,7 +24,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.save
-    respond_with(@booking)
+    respond_with(@booking)   
   end
 
   def update
@@ -42,6 +43,6 @@ class BookingsController < ApplicationController
     end
 
     def booking_params
-      params.require(:booking).permit(:show_id_id, :user_id_id)
+      params.require(:booking).permit(:show_id, :user_id)
     end
 end

@@ -1,0 +1,6 @@
+$('.show-fees').html("<%= j render('show_fee') %>" );
+<% if (@show.bookings.length == @show.theatre.seat_limit) && @show.show_time.past? %>
+  $('.save-booking').prop('disabled', true);
+<% else %>
+  $('.save-booking').prop('disabled', false);  
+<% end %>

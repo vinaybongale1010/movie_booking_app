@@ -34,7 +34,7 @@ class MoviesController < ApplicationController
   def destroy
     @movie.destroy
     respond_with(@movie)
-  end
+  end  
 
   private
     def set_movie

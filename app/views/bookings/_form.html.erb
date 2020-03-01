@@ -1,25 +1,18 @@
-<%= form_for(@booking) do |f| %>
-  <% if @booking.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
-
-      <ul>
-      <% @booking.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<%= form_tag('/bookings') do %>
   <div class="field">
-    <%= f.label :show_id_id %><br>
-    <%= f.text_field :show_id_id %>
+    <%= label_tag :Movie %><br>
+    <%= select_tag(:movie, options_from_collection_for_select(@movies, 'id', 'name'), {:prompt => 'Select Movie'}) %>
   </div>
-  <div class="field">
-    <%= f.label :user_id_id %><br>
-    <%= f.text_field :user_id_id %>
-  </div>
+
+  <div class="field theatre-details"></div>
+
+  <div class="field show-details"></div>
+
+  <div class="field show-fees"></div>
+
+   <%= hidden_field_tag "user_id", current_user.id, {:name => "booking[user_id]"} %>
+    
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag 'Save', {:class => 'save-booking'} %>
   </div>
 <% end %>

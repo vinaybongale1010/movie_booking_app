@@ -16,8 +16,8 @@
       <tr>
         <td><%= show.show_time %></td>
         <td><%= show.show_fee %></td>
-        <td><%= show.movie %></td>
-        <td><%= show.theatre %></td>
+        <td><%= show.movie.name %></td>
+        <td><%= show.theatre.name %></td>
         <td><%= link_to 'Show', show %></td>
         <td><%= link_to 'Edit', edit_show_path(show) %></td>
         <td><%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure?' } %></td>

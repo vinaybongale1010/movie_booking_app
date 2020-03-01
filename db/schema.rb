@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20200301115026) do
   end
 
   create_table "shows", force: true do |t|
-    t.time     "show_time"
+    t.datetime "show_time"
     t.integer  "show_fee"
     t.integer  "movie_id"
     t.integer  "theatre_id"

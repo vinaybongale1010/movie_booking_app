@@ -2,12 +2,17 @@
 
 <p>
   <strong>Show:</strong>
-  <%= @booking.show_id %>
+  <%= @booking.show.movie.name %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @booking.user_id %>
+  <strong>Show Time:</strong>
+  <%= @booking.show.show_time %>
+</p>
+
+<p>
+  <strong>Theatre:</strong>
+  <%= @booking.show.theatre.name %>
 </p>
 
 <%= link_to 'Edit', edit_booking_path(@booking) %> |

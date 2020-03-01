@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
-  resources :movies
+  resources :movies  
 
-  resources :shows
+  resources :shows do
+    collection do
+      get :get_shows
+    end
 
-  resources :theatres
+    member do
+      get :get_show
+    end
+  end
+
+  resources :theatres do
+    collection do
+      get :get_theatres
+    end
+  end  
 
   resources :bookings
 
@@ -12,7 +24,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'bookings#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

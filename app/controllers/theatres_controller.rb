@@ -36,6 +36,10 @@ class TheatresController < ApplicationController
     respond_with(@theatre)
   end
 
+  def get_theatres
+    @theatres = Movie.find(params[:movie_id]).theatres.uniq
+  end  
+
   private
     def set_theatre
       @theatre = Theatre.find(params[:id])
